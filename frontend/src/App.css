@@ -1,0 +1,122 @@
+/*  Global */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f6f8;
+}
+
+/*  Container */
+.container {
+  padding: 30px;
+}
+
+/*  Header */
+.header {
+  margin-bottom: 20px;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: bold;
+  color: #0d5297;
+  margin: 0;
+}
+
+.tagline {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/*  Card */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/*  Inputs */
+.input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  box-sizing: border-box;
+  transition: 0.2s;
+}
+
+.input:focus {
+  border-color: #0d5297;
+  box-shadow: 0 0 5px rgba(13,82,151,0.2);
+}
+
+/*  Buttons */
+.button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-blue {
+  background: #3498db;
+}
+
+.btn-blue:hover {
+  background: #2980b9;
+}
+
+.btn-green {
+  background: #2ecc71;
+}
+
+.btn-green:hover {
+  background: #27ae60;
+}
+
+.btn-red {
+  background: #e74c3c;
+  width: 150px;
+}
+
+.btn-red:hover {
+  background: #c0392b;
+}
+
+/*  Layout */
+.dashboard {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+/*  Items grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+  flex: 1;
+}
+
+/*  Search */
+.search-bar {
+  margin: 20px 0;
+}
+
+/*  Center login */
+.center-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
