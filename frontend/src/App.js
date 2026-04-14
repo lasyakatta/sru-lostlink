@@ -31,7 +31,7 @@ function App() {
   });
 
   const fetchItems = () => {
-    axios.get("http://localhost:5000/items")
+    axios.get("https://sru-lostlink.onrender.com/items")
       .then(res => setItems(res.data));
   };
 
@@ -40,7 +40,7 @@ function App() {
   }, [user]);
 
   const fetchMessages = () => {
-    axios.get(`http://localhost:5000/messages/${user.email}`)
+    axios.get(`https://sru-lostlink.onrender.com/messages/${user.email}`)
       .then(res => {
         setMessages(res.data);
         setShowMessages(true);
@@ -51,7 +51,7 @@ function App() {
   const deleteMessage = (id) => {
     if (!window.confirm("Delete this message?")) return;
 
-    axios.delete(`http://localhost:5000/message/${id}`)
+    axios.delete(`https://sru-lostlink.onrender.com/message/${id}`)
       .then(() => {
         setMessages(messages.filter(msg => msg._id !== id));
       })
@@ -75,7 +75,7 @@ function App() {
       return;
     }
 
-    axios.post("http://localhost:5000/items", {
+    axios.post("https://sru-lostlink.onrender.com/items", {
       ...form,
       userEmail: user.email
     })
@@ -95,7 +95,7 @@ function App() {
   const deleteItem = (id) => {
     if (!window.confirm("Are you sure you want to delete this item?")) return;
 
-    axios.delete(`http://localhost:5000/items/${id}`, {
+    axios.delete(`https://sru-lostlink.onrender.com/items/${id}`, {
       data: { userEmail: user.email }
     })
       .then(() => fetchItems())
@@ -115,7 +115,7 @@ function App() {
     const contactNumber = prompt("Enter your contact number");
     if (!contactNumber) return;
 
-    axios.post("http://localhost:5000/message", {
+    axios.post("https://sru-lostlink.onrender.com/message", {
       itemId: item._id,
       senderEmail: user.email,
       receiverEmail: item.userEmail,
@@ -133,7 +133,7 @@ function App() {
       return;
     }
 
-    axios.post("http://localhost:5000/register", auth)
+    axios.post("https://sru-lostlink.onrender.com/register", auth)
       .then(() => {
         alert("Registered successfully");
         setIsRegister(false);
@@ -148,7 +148,7 @@ function App() {
       return;
     }
 
-    axios.post("http://localhost:5000/login", auth)
+    axios.post("https://sru-lostlink.onrender.com/login", auth)
       .then(res => setUser(res.data))
       .catch(() => alert("Invalid credentials"));
   };
